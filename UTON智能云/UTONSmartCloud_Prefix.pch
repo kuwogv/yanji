@@ -1,0 +1,62 @@
+//
+//  UTONSmartCloud_Prefix.pch
+//  UTON智能云
+//
+//  Created by mac on 2021/3/2.
+//
+
+#ifndef UTONSmartCloud_Prefix_pch
+#define UTONSmartCloud_Prefix_pch
+#ifdef __OBJC__
+//#import <Foundation/Foundation.h>
+//#import <UIKit/UIKit.h>
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "UTONBaseViewController.h"
+#import "UTONTextField.h"
+#import <Masonry/Masonry.h>
+#import "CCBColorConstants.h"
+#import "UTONFontConstants.h"
+#import "CCBBaseAlertView.h"
+#import "CCBAlertView.h"
+#import "NSString+ui.h"
+#import "UIImage+ImageGenerate.h"
+#import  <MBProgressHUD/MBProgressHUD.h>
+#import <AFNetworking/AFNetworking.h>
+#import "UTONJsonUtil.h"
+#import "NSString+Encryption.h"
+#import "UTONRequestParamsTool.h"
+#import "AppInterface.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <GTMBase64/GTMBase64.h>
+#import "CYLTabBarController.h"
+#import "NSString+AES.h"
+#import "UTONBaseHttpRequest.h"
+#import "CloudMerchantMonitorUtil.h"
+#import <SDWebImage/SDWebImage.h>
+#import <AVFoundation/AVFoundation.h>
+#import "CCBCallCenter.h"
+#import "AppDelegate.h"
+#import "LBXScanViewController.h"
+#import "UIImage+Extensions.h"
+#import "XLPageViewControllerConfig.h"
+#import "XLPageViewController.h"
+#endif
+
+#define UTONAESEncryptKey [UTONRequestParamsTool sharedRequestParamsTool].AESEncryptionKey /**< AES加密的key值*/
+#define UTONAESIV @"1234567890123456" /**< AES加密的偏移量*/
+#define WEAKSELF __weak typeof (self) weakSelf = self;
+#define statusHeight [[UIApplication sharedApplication] statusBarFrame].size.height
+#define kIs_iPhoneX  statusHeight > 20.0
+#define kStatusBarHeight (CGFloat)(kIs_iPhoneX?(44.0):(20.0))
+#define mScreenWidth [UIScreen mainScreen].bounds.size.width
+#define mScreenHeight [UIScreen mainScreen].bounds.size.height
+
+
+#define IS_IOS_7 ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0)?YES:NO
+
+#define mNavBarHeight ((IS_IOS_7)?64:44)
+#define mStateBarHeight ((IS_IOS_7)?20:0)
+
+#endif /* UTONSmartCloud_Prefix_pch */
+
